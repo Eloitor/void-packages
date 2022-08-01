@@ -1,0 +1,3 @@
+[submodule "community/duck-void-packages"]
+	path = community/duck-void-packages
+	url = https://github.com/Flammable-Duck/duck-void-packages

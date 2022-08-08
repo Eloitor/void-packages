@@ -1,0 +1,16 @@
+# Template file for 'python3-lesspass'
+pkgname=python3-lesspass
+version=10.1.0
+revision=1
+wrksrc=lesspass-$version
+build_style=python3-module
+hostmakedepends="python3-setuptools"
+makedepends="python3-devel"
+depends=""
+short_desc="Stateless password generator"
+maintainer="Eloi Torrents <eloitor@disroot.org>"
+license="GPL-3.0-only"
+homepage="https://pypi.org/project/lesspass/"
+#changelog=""
+distfiles="${PYPI_SITE}/l/lesspass/lesspass-${version}.tar.gz"
+checksum=0079d485f297aadfa1e3c6b9b6a061f7b49796ff10f87f26a0d7c9b64de48511

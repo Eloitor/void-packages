@@ -1,0 +1,44 @@
+# Template file for 'dotnet-sdk'
+pkgname=dotnet-sdk
+version=6.0.302
+revision=1
+archs="x86_64 armv7 aarch64"
+wrksrc="${pkgname}-${version}"
+create_wrksrc=yes
+short_desc="Provides the .NET SDK components"
+maintainer="Eloi Torrents <eloitor@disroot.org>"
+license="MIT"
+homepage="https://dotnet.microsoft.com"
+nopie=yes
+
+case "${XBPS_TARGET_MACHINE}" in
+	x86_64)
+	_arch="x64"
+	distfiles="https://dotnetcli.azureedge.net/dotnet/Sdk/${version}/${pkgname}-${version}-linux-${_arch}.tar.gz"
+	checksum="883a25a15a6aa9d74ae35b23efdb6dced85e52b9519fc590313cec6c2626af79"
+	;;
+	armv7)
+	_arch="arm"
+	distfiles="https://dotnetcli.azureedge.net/dotnet/Sdk/${version}/${pkgname}-${version}-linux-${_arch}.tar.gz"
+	checksum="76488566b7c81f12a517274562bf5bbb77e003cd9ca568f90d9bfb2865de3242"
+	;;
+	aarch64)
+	_arch="arm64"
+	distfiles="https://dotnetcli.azureedge.net/dotnet/Sdk/${version}/${pkgname}-${version}-linux-${_arch}.tar.gz"
+	checksum="eefcb70438113652d2f732bb21dfc1e9b9d442151a2d8881c94fd04905333645"
+	;;
+esac
+
+_target='opt/dotnet'
+
+do_install() {
+	vmkdir usr/bin
+	ln -sf "/${_target}/dotnet" "${DESTDIR}/usr/bin/dotnet"
+	vmkdir "${_target}"
+	vcopy dotnet "${_target}"
+	vcopy host "${_target}"
+	vcopy shared "${_target}"
+	vcopy sdk "${_target}"
+	vlicense "${FILESDIR}/LICENSE"
+}
+

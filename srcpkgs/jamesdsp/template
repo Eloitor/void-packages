@@ -1,0 +1,23 @@
+# Template file for 'jamesdsp'
+pkgname=jamesdsp
+version=2.3
+revision=1
+#archs="i686 x86_64"
+wrksrc=JDSP4Linux-${version}
+#create_wrksrc=yes
+build_style=qmake
+#configure_args=""
+#make_build_args=""
+#make_install_args=""
+#conf_files=""
+#make_dirs="/var/log/dir 0755 root root"
+hostmakedepends="qt5-host-tools qt5-qmake glibmm-devel git"
+makedepends="qt5-devel glibmm-devel"
+depends="glibmm pipewire qt5-svg"
+short_desc="An audio effect processor for PipeWire and PulseAudio clients"
+maintainer="Eloi Torrents <eloitor@disroot.org>"
+license="GPL-3.0-only"
+homepage="https://github.com/Audio4Linux/JDSP4Linux"
+#changelog=""
+distfiles="https://github.com/Audio4Linux/JDSP4Linux/archive/refs/tags/${version}.tar.gz"
+checksum=d57f5f296480b244b34abb5faad3c6c36c3c7088a346fd3624bf9e8c6a5ff147

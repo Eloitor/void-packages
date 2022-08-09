@@ -1,0 +1,45 @@
+# Template file for 'FVim'
+pkgname=FVim
+_git_rev=g119a455
+version=0.3.531
+revision=1
+#archs="i686 x86_64"
+wrksrc=fvim-${version}-${_git_rev}
+hostmakedepends="dotnet-sdk icu-devel"
+makedepends=""
+depends="neovim"
+short_desc="Cross platform Neovim front-end UI, built with F# + Avalonia"
+maintainer="Eloi Torrents <eloitor@disroot.org>"
+license="MIT"
+homepage="https://github.com/yatli/fvim"
+distfiles="https://github.com/yatli/fvim/archive/refs/tags/v${version}+${_git_rev}.tar.gz"
+checksum=f25cda0317ee6600ee6510a5e1f71425ab8efc074c054f3f80441e94213b4910
+nostrip=yes
+
+do_build() {
+  dotnet publish fvim.fsproj \
+    -f net6.0 \
+    -c Release \
+    -r linux-x64 \
+    --self-contained
+}
+
+do_install() {
+  vbin lib/fvim-linux-launcher FVim
+  vinstall lib/fvim.desktop 644 usr/share/applications
+  vmkdir usr/share/fvim
+  vcopy "bin/Release/net6.0/linux-x64/FVim" usr/share/fvim
+  vcopy "bin/Release/net6.0/linux-x64/*.dll" usr/share/fvim
+
+  vmkdir usr/share/icons/hicolor/48x48/apps
+  vcopy Assets/fvim.png usr/share/icons/hicolor/48x48/apps/
+}
+
+FVim-devel_package() {
+	short_desc+=" - development files"
+	depends="${sourcepkg}>=${version}_${revision}"
+	pkg_install() {
+    vmkdir usr/share/fvim
+    vcopy "bin/Release/net6.0/linux-x64/*.so" usr/lib
+	}
+}

@@ -1,0 +1,19 @@
+# Template file for 'git-interactive-rebase-tool'
+pkgname=git-interactive-rebase-tool
+version=2.2.0
+revision=1
+build_style=cargo
+#configure_args=""
+#make_build_args=""
+#make_install_args=""
+#conf_files=""
+#make_dirs="/var/log/dir 0755 root root"
+hostmakedepends=""
+makedepends="libgit2-devel"
+depends=""
+short_desc="A terminal based sequence editor for interactive rebase"
+maintainer="Eloi Torrents <eloi.torrentsj@gmail.com>"
+license="GPL-3.0-or-later"
+homepage="https://gitrebasetool.mitmaro.ca"
+distfiles="https://github.com/MitMaro/git-interactive-rebase-tool/archive/${version}/${pkgname}-${version}.tar.gz"
+checksum=4d60912c64a1ea25ff3e8a4beca0ecdb6a1c761f81e06f81ebc2a46119b8780c

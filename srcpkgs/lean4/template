@@ -1,0 +1,40 @@
+# Template file for 'lean4'
+pkgname=lean4
+version=4.0.0
+_milestone=5
+_lake_version=4.0.0
+revision=1
+wrksrc=${pkgname}-${version}-m${_milestone}
+makedepends="cmake gmp-devel"
+depends="gmp"
+short_desc="Lean 4 programming language and theorem prover"
+maintainer="Eloi Torrents <eloitor@disroot.org>"
+license="GPL-3.0-or-later"
+homepage="https://leanprover.github.io/"
+#changelog=""
+distfiles="
+	https://github.com/leanprover/lean4/archive/refs/tags/v${version}-m${_milestone}.tar.gz
+	https://github.com/leanprover/lake/archive/refs/tags/v${_lake_version}.tar.gz"
+checksum="
+	c1e0f4744cabd509dd1525f365a6b3b9569ee5a47377588785483985f532304c
+	0455305adc70160f16692f89219f19017aea3d7efa66d951d9bc367df10f64e0"
+
+pre_configure() {
+	rmdir -v src/lake
+  mv -v ../lake-${_lake_version} src/lake
+}
+
+pre_build() {
+	mkdir -p build
+}
+
+do_build () {
+  cd build
+  cmake -D CMAKE_BUILD_TYPE=RELEASE ..
+	make
+	make stage2
+}
+
+do_install() {
+	ls
+}

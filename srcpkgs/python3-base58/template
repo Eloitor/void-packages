@@ -1,0 +1,17 @@
+# Template file for 'python3-base58'
+pkgname=python3-base58
+version=2.1.1
+revision=1
+#wrksrc=
+#create_wrksrc=yes
+build_style=python3-module
+hostmakedepends="python3-setuptools"
+makedepends=""
+depends="python3"
+short_desc="Bitcoin-compatible Base58 and Base58Check implementation"
+maintainer="Eloi Torrents <eloitor@disroot.org>"
+license="MIT"
+homepage="https://github.com/keis/base58"
+#changelog=""
+distfiles="https://github.com/keis/base58/archive/v$version.tar.gz"
+checksum=5df25ce3b3d2f7e9d5289b2c75ba9e5291b59b1c34f4f7c90df5ae5f87fe5fb9

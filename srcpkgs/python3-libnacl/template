@@ -1,0 +1,16 @@
+# Template file for 'python3-libnacl'
+pkgname=python3-libnacl
+version=1.8.0
+revision=1
+#wrksrc=
+build_style=python3-module
+hostmakedepends="python3-setuptools"
+makedepends=""
+depends="python3"
+short_desc="Python bindings for libsodium/tweetnacl"
+maintainer="Eloi Torrents <eloitor@disroot.org>"
+license="GPL-3.0-or-later"
+homepage="https://libnacl.readthedocs.org/"
+#changelog=""
+distfiles="https://github.com/mgorny/libnacl/archive/refs/tags/v$version.tar.gz"
+checksum=dbbd486b19f83436a6b3f78b859f7d154cd4181b4053380eb7ee02acfc97c6ef

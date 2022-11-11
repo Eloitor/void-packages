@@ -1,12 +1,12 @@
 # Template file for 'silkaj'
 pkgname=silkaj
 version=0.10.0
-revision=4
+revision=5
 #create_wrksrc=yes
 build_style=python3-module
 hostmakedepends="python3-setuptools"
-makedepends=""
-depends="python3 python3-duniterpy python3-libnacl python3-pyPEG2"
+makedepends="python3-build python3-installer python3-wheel"
+depends="python3 python3-duniterpy python3-libnacl python3-pyPEG2 python3-pendulum python3-texttable python3-tabulate"
 short_desc="Command line client for Duniter’s currencies"
 maintainer="Eloi Torrents <eloitor@disroot.org>"
 license="AGPL-3.0-only"
@@ -14,3 +14,11 @@ homepage="https://silkaj.duniter.org/"
 changelog="https://git.duniter.org/clients/python/silkaj/-/blob/main/CHANGELOG.md"
 distfiles="${PYPI_SITE}/s/silkaj/silkaj-${version}.tar.gz"
 checksum=f35ac573e5720a27cf58acf1b194077abe236345bfcd28228ab9e7ccb5c5125d
+
+do_build() {
+	python -m build --wheel --no-isolation
+}
+
+do_install() {
+	python3 -m installer --destdir="$DESTDIR" dist/*.whl
+}

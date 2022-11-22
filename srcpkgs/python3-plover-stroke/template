@@ -1,0 +1,15 @@
+# Template file for 'python3-plover-stroke'
+pkgname=python3-plover-stroke
+version=1.1.0
+revision=1
+build_style=python3-module
+hostmakedepends="python3-setuptools"
+makedepends="python3-devel"
+depends="python3"
+short_desc="Helper class for working with steno strokes"
+maintainer="Eloi Torrents <eloitor@disroot.org>"
+license="GPL-2.0-only"
+homepage="https://github.com/benoit-pierre/plover_stroke"
+#changelog=""
+distfiles="https://github.com/benoit-pierre/plover_stroke/archive/refs/tags/${version}.tar.gz"
+checksum=9c5e01ff594a822424562dd12c60aa0dfc66eb4a0060a16c57c7ab12f04825c4

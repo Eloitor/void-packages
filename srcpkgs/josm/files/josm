@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# openjdk11 is required
+exec "/usr/lib/jvm/openjdk11/bin/java" \
+    -jar "/usr/share/josm/josm.jar"

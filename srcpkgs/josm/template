@@ -1,0 +1,27 @@
+# Template file for 'josm'
+pkgname=josm
+version=18583
+revision=1
+hostmakedepends="openjdk11 apache-ant"
+depends="virtual?java-environment"
+short_desc="Editor for OpenStreetMap written in Java"
+maintainer="Eloi Torrents <eloitor@disroot.org>"
+license="GPL-2.0-or-later"
+homepage="https://josm.openstreetmap.de/"
+#changelog=""
+distfiles="https://github.com/JOSM/josm/archive/refs/tags/${version}-tested.tar.gz"
+checksum=8d0efab09bcbfa7014d4f51af546f85fc360c444f0cd3d5cb44e5df4eeb05ce7
+
+do_build() {
+  . /etc/profile.d/apache-ant.sh
+	. /etc/profile.d/openjdk.sh
+  ant
+}
+
+do_install() {
+  vmkdir usr/share/josm
+  vinstall dist/josm-custom.jar 644 usr/share/josm josm.jar
+
+	# launcher
+	vbin ${FILESDIR}/josm
+}

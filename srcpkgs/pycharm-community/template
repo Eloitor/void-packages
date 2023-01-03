@@ -1,6 +1,6 @@
 # Template file for 'pycharm-community'
 pkgname=pycharm-community
-version=2021.2.2
+version=2022.3.1
 revision=1
 archs="x86_64"
 depends="virtual?java-environment giflib libXtst hicolor-icon-theme"

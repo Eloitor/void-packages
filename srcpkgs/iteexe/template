@@ -1,0 +1,17 @@
+# Template file for 'iteexe'
+pkgname=iteexe
+version=2.7
+revision=1
+#wrksrc=
+#create_wrksrc=yes
+build_style=python3-module
+hostmakedepends="python3-setuptools"
+makedepends=""
+depends="python3"
+short_desc="Editor to create Educational Resources."
+maintainer="Eloi Torrents <eloitor@disroot.org>"
+license="GPL-2.0"
+homepage="http://exelearning.net"
+changelog="https://exelearning.net/en/new-in-exelearning"
+distfiles="https://github.com/exelearning/iteexe/archive/refs/tags/${version}.tar.gz"
+checksum=efbcee27f92f9744ff609a78e075b8265724e5f2b57ce1cbaa0265d9a3d77b1e

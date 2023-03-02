@@ -1,0 +1,26 @@
+# Template file for 'polymake'
+pkgname=polymake
+version=4.9
+revision=1
+build_style=gnu-configure
+#configure_args="--prefix=/usr"
+#make_build_args=""
+#make_install_args=""
+#conf_files=""
+#make_dirs="/var/log/dir 0755 root root"
+hostmakedepends="perl gmp-devel cmake"
+makedepends=""
+depends=""
+short_desc="Open source software for research in polyhedral geometry"
+maintainer="Eloi Torrents <eloitor@disroot.org>"
+license="GPL-2.0-or-later"
+homepage="https://polymake.org/"
+#changelog=""
+distfiles="https://polymake.org/lib/exe/fetch.php/download/polymake-${version}-minimal.tar.bz2"
+checksum=04c90b826b3a26c5a63e18be319bff12a89ef0128bf8a68fb64df10594b259f3
+
+do_configure() {
+  	CXXOPT="" \
+  	./configure \
+    --prefix=/usr
+}

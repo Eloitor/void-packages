@@ -1,0 +1,14 @@
+# Template file for '4ti2'
+pkgname=4ti2
+version=1.6.9
+revision=1
+build_style=gnu-configure
+depends="glpk"
+checkdepends="which"
+short_desc="Algebraic, geometric and combinatorial problems on linear spaces"
+maintainer="Eloi Torrents <eloitor@disroot.org>"
+license="GPL-2.0-only"
+homepage="https://4ti2.github.io/"
+changelog="https://github.com/4ti2/4ti2/blob/master/NEWS"
+distfiles="https://github.com/4ti2/4ti2/releases/download/Release_${version//./_}/${pkgname}-${version}.tar.gz"
+checksum=3053e7467b5585ad852f6a56e78e28352653943e7249ad5e5174d4744d174966

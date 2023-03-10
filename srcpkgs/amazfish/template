@@ -1,0 +1,33 @@
+# Template file for 'amazfish'
+pkgname=amazfish
+version=2.1.2
+revision=1
+_commit_qble="3631992ff3bf71a4680f18487e05486c134a1805"
+_commit_libwatchfish="772bbb3375bd9ac4f38b2bb52dcf82f953f76db7"
+build_style=qmake
+hostmakedepends="qt5-host-tools qt5-qmake"
+makedepends="qt5-devel karchive-devel kdb-devel qt5-location-devel"
+depends=""
+short_desc="Companion application for Huami Devices and the Pinetime Infinitime"
+maintainer="Eloi Torrents <eloitor@disroot.org>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/piggz/harbour-amazfish"
+distfiles="https://github.com/piggz/harbour-amazfish/archive/refs/tags/${version}.tar.gz
+	https://github.com/piggz/qble/archive/$_commit_qble/qble-$_commit_qble.tar.gz
+	https://github.com/piggz/libwatchfish/archive/$_commit_libwatchfish/libwatchfish-$_commit_libwatchfish.tar.gz"
+checksum="1abab9ec8455407bbaeb51ab6af98a5c4704f54ebede5f9f52e8527058f0fb90
+	cdb77521c40e591b218e036ae5c3db1e0197d456060aefa25b86c5ea3a0e3a1e
+	e1e22fce80e70b84756f85277e42613329130b05202fc7580b55b15766c530dc"
+
+post_extract() {
+	mv harbour-amazfish-${version}/* .
+	mv qble-$_commit_qble qble
+	mv libwatchfish-$_commit_libwatchfish daemon/libwatchfish
+}
+
+do_build() {
+	qmake-qt5 \
+		PREFIX=/usr \
+		FLAVOR=kirigami
+	make
+}

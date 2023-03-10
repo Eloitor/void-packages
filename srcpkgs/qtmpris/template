@@ -1,0 +1,21 @@
+# Template file for 'qtmpris'
+pkgname=qtmpris
+version=1.0.6
+revision=1
+#archs="i686 x86_64"
+#build_wrksrc=
+build_style=qmake
+#configure_args=""
+#make_build_args=""
+#make_install_args=""
+#conf_files=""
+#make_dirs="/var/log/dir 0755 root root"
+hostmakedepends="qt5-host-tools qt5-qmake"
+makedepends="qt5-declarative-devel"
+depends=""
+short_desc="Qt and QML MPRIS interface and adaptor"
+maintainer="Eloi Torrents <eloitor@disroot.org>"
+license="LGPL-2.1-or-later"
+homepage="https://github.com/sailfishos/qtmpris"
+distfiles="https://github.com/sailfishos/qtmpris/archive/refs/tags/${version}.tar.gz"
+checksum=384eac76ec7d29d1de6fa93c45007ccd506d6cc0e4c69e19d4250e16cc0f34a2

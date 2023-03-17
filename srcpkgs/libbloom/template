@@ -1,0 +1,32 @@
+# Template file for 'libbloom'
+pkgname=libbloom
+version=2.0
+revision=1
+build_style=gnu-makefile
+short_desc="Simple and small bloom filter implementation in plain C"
+maintainer="Eloi Torrents <eloitor@disroot.org>"
+license="BSD-2-Clause"
+homepage="https://github.com/jvirkki/libbloom"
+changelog="https://raw.githubusercontent.com/jvirkki/libbloom/master/ChangeLog"
+distfiles="https://github.com/jvirkki/libbloom/archive/refs/tags/v${version}.tar.gz"
+checksum=59965451ef033b0e060c9d7e472ead06af1ac61beddde11fe3ed4f5f4587bda6
+
+do_build() {
+	make
+}
+
+do_check() {
+	make test
+}
+
+do_install() {
+	vinstall bloom.h 644 usr/include
+	vinstall build/libbloom.so.${version} 644 usr/lib
+	vinstall build/libbloom.so.2 644 usr/lib
+	vinstall build/libbloom.so 644 usr/lib
+}
+
+post_install() {
+	vlicense LICENSE
+	vlicense murmur2/README
+}

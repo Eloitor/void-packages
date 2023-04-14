@@ -1,0 +1,32 @@
+# Template file for 'Macaulay2'
+pkgname=Macaulay2
+version=1.21
+revision=1
+#archs="i686 x86_64"
+build_wrksrc="M2"
+build_style=cmake
+#configure_args=""
+#make_build_args=""
+#make_install_args=""
+#conf_files=""
+#make_dirs="/var/log/dir 0755 root root"
+hostmakedepends="autoconf automake libtool pkg-config bison texlive texlive-BibTeX"
+makedepends="blas-devel lapack-devel boost-devel gdbm-devel libatomic_ops-devel
+libgomp-devel tbb-devel libffi-devel readline-devel gmpxx-devel libxml2-devel
+eigen mpfr-devel mpfi-devel ntl-devel flintlib-devel cddlib-devel gtest-devel
+glpk-devel fflas-ffpack givaro-devel nauty-devel"
+depends=""
+short_desc="Software system for algebraic geometry and commutative algebra"
+maintainer="Eloi Torrents <eloitor@disroot.org>"
+license="GPL-3.0-or-later"
+homepage="https://faculty.math.illinois.edu/Macaulay2/"
+#changelog=""
+distfiles="https://github.com/Macaulay2/M2/archive/refs/tags/release-${version}.tar.gz"
+checksum=1923da43b94675b5f0f05dbde111c5d90c810a41c99f078b6917477bda5ef527
+
+do_patch() {
+	sed -i '/git submodule/d' Makefile
+	ls
+}
+
+

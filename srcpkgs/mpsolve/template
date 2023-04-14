@@ -1,0 +1,15 @@
+# Template file for 'mpsolve'
+pkgname=mpsolve
+version=3.2.1
+revision=1
+build_style=gnu-configure
+configure_args="--prefix=/usr --disable-debug --disable-examples"
+hostmakedepends=""
+makedepends="gmpxx-devel mpfr-devel"
+short_desc="Multiprecision polynomial solver"
+maintainer="Eloi Torrents <eloitor@disroot.org>"
+license="GPL-3.0-or-later"
+homepage="https://numpi.dm.unipi.it/software/mpsolve"
+changelog="https://raw.githubusercontent.com/robol/MPSolve/master/ChangeLog"
+distfiles="https://numpi.dm.unipi.it/_media/software/mpsolve/mpsolve-${version}.tar.gz"
+checksum=3d11428ae9ab2e020f24cabfbcd9e4d9b22ec572cf70af0d44fe8dae1d51e78e

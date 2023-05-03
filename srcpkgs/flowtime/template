@@ -1,0 +1,22 @@
+# Template file for 'flowtime'
+pkgname=flowtime
+version=3.0
+revision=1
+#archs="i686 x86_64"
+#build_wrksrc=
+build_style=meson
+#configure_args=""
+#make_build_args=""
+#make_install_args=""
+#conf_files=""
+#make_dirs="/var/log/dir 0755 root root"
+hostmakedepends="vala gettext pkg-config cmake desktop-file-utils appstream-glib"
+makedepends="libglib-devel gtk4-devel libadwaita-devel libgee-devel"
+depends=""
+short_desc="Get what motivates you done, without losing concentration"
+maintainer="Eloi Torrents <eloitor@disroot.org>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/Diego-Ivan/Flowtime"
+changelog="https://github.com/Diego-Ivan/Flowtime/releases"
+distfiles="https://github.com/Diego-Ivan/Flowtime/archive/refs/tags/v${version}.tar.gz"
+checksum=56173a3969e70b48871da53234ffe42a072230042fa1e9dd985b6d9f0762dd97

@@ -1,0 +1,7 @@
+
+# INSTALL
+case "${ACTION}" in
+post)
+	mkdir -p etc/forticlient
+	;;
+esac

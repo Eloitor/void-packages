@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Name=FortiClient
+GenericName=Security Software
+Comment=Endpoint Protection Suite
+Exec=/usr/bin/FortiClient
+Icon=forticlient
+Type=Application
+Terminal=false
+Categories=Utility;

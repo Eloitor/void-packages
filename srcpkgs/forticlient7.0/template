@@ -1,0 +1,83 @@
+# Template file for 'forticlient7.0'
+pkgname=forticlient7.0
+version=7.0.7.0246
+revision=1
+archs="x86_64"
+depends="libffi"
+short_desc="FortiClient VPN"
+maintainer="Eloi Torrents <eloitor@disroot.org>"
+license="custom:Proprietary"
+homepage="https://www.fortinet.com"
+distfiles="https://filestore.fortinet.com/forticlient/forticlient_vpn_${version}_amd64.deb"
+checksum=482f245df302417ab19b6501525acae6c62a022eec80baf5ad285a0fb1f5323e
+alternatives="forticlient:/opt/forticlient/gui/FortiClient-linux-x64/FortiClient:/usr/bin/FortiClient"
+make_dirs="/opt/forticlient 0755 root root"
+repository=nonfree
+nopie=yes
+
+do_install() {
+	vmkdir usr/share/applications
+	vinstall usr/share/applications/forticlient.desktop 644 /usr/share/applications
+
+	vmkdir usr/share/doc/forticlient
+	vinstall usr/share/doc/forticlient/changelog 644 /usr/share/doc/forticlient
+	vinstall usr/share/doc/forticlient/copyright 644 /usr/share/doc/forticlient
+	
+	for size in 16 22 24 32 48 64 128 256; do
+		vinstall usr/share/icons/hicolor/${size}x${size}/apps/forticlient.png 644 \
+			/usr/share/icons/hicolor/${size}x${size}/apps
+	done
+	
+	vinstall usr/share/polkit-1/actions/org.fortinet.forticlient.policy 644 \
+		/usr/share/polkit-1/actions
+	vinstall usr/share/polkit-1/actions/org.fortinet.fortitray.policy 644 \
+		/usr/share/polkit-1/actions
+	
+	cd opt/forticlient
+	vinstall confighandler 744 /opt/forticlient
+	vinstall fctsched 744 /opt/forticlient
+	vinstall fortitray 744 /opt/forticlient
+	vinstall fortitraylauncher 744 /opt/forticlient
+	vinstall fortivpn 744 /opt/forticlient
+	vinstall update 744 /opt/forticlient
+	vinstall update_tls 744 /opt/forticlient
+	vinstall vpn 744 /opt/forticlient
+
+	cd images
+	for name in Forticlient Virus_Alert alert avatar_b notification_error notification_info notification_warning; do
+		vinstall ${name}.png 644 /opt/forticlient/images
+	done
+	cd ../gui/FortiClient-linux-x64
+	vmkdir /opt/forticlient/gui/FortiClient-linux-x64
+	vinstall FortiClient 744 /opt/forticlient/gui/FortiClient-linux-x64	
+	vinstall chrome-sandbox 744 /opt/forticlient/gui/FortiClient-linux-x64	
+	vinstall chrome_100_percent.pak 644 /opt/forticlient/gui/FortiClient-linux-x64
+	vinstall chrome_200_percent.pak 644 /opt/forticlient/gui/FortiClient-linux-x64
+	vinstall icudtl.dat 644 /opt/forticlient/gui/FortiClient-linux-x64
+	vinstall libEGL.so 644 /opt/forticlient/gui/FortiClient-linux-x64
+	vinstall libGLESv2.so 644 /opt/forticlient/gui/FortiClient-linux-x64
+	vinstall libffmpeg.so 644 /opt/forticlient/gui/FortiClient-linux-x64
+	vinstall libvk_swiftshader.so 644 /opt/forticlient/gui/FortiClient-linux-x64
+	vinstall libvulkan.so 644 /opt/forticlient/gui/FortiClient-linux-x64
+	vinstall resources.pak 644 /opt/forticlient/gui/FortiClient-linux-x64
+	vinstall snapshot_blob.bin 644 /opt/forticlient/gui/FortiClient-linux-x64
+	vinstall v8_context_snapshot.bin 644 /opt/forticlient/gui/FortiClient-linux-x64
+	vinstall version 644 /opt/forticlient/gui/FortiClient-linux-x64
+	vinstall vk_swiftshader_icd.json 644 /opt/forticlient/gui/FortiClient-linux-x64
+
+
+	vmkdir opt/forticlient/gui/FortiClient-linux-x64/locales
+	vcopy "locales/*.pak" opt/forticlient/gui/FortiClient-linux-x64/locales
+
+	vinstall resources/app.asar 644 /opt/forticlient/gui/FortiClient-linux-x64/resources
+
+	vinstall swiftshader/libEGL.so 644 /opt/forticlient/gui/FortiClient-linux-x64/swiftshader
+	vinstall swiftshader/libGLESv2.so 644 /opt/forticlient/gui/FortiClient-linux-x64/swiftshader
+}
+
+post_install() {
+	vsv forticlient
+	vlicense usr/share/doc/forticlient/copyright
+	vlicense opt/forticlient/gui/FortiClient-linux-x64/LICENSE
+	vlicense opt/forticlient/gui/FortiClient-linux-x64/LICENSES.chromium.html
+}

@@ -1,0 +1,20 @@
+# Template file for 'python3-pydub'
+pkgname=python3-pydub
+version=0.25.1
+revision=1
+build_style=python3-module
+#configure_args=""
+#make_build_args=""
+#make_install_args=""
+#conf_files=""
+#make_dirs="/var/log/dir 0755 root root"
+hostmakedepends="python3-setuptools"
+makedepends=""
+depends=""
+short_desc="Manipulate audio with an simple and easy high level interface"
+maintainer="Eloi Torrents <eloitor@disroot.org>"
+license="MIT"
+homepage="http://pydub.com/"
+changelog="https://github.com/jiaaro/pydub/raw/master/CHANGELOG.md"
+distfiles="${PYPI_SITE}/p/pydub/pydub-${version}.tar.gz"
+checksum=980a33ce9949cab2a569606b65674d748ecbca4f0796887fd6f46173a7b0d30f

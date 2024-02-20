@@ -1,0 +1,19 @@
+# Template file for 'python3-manimpango'
+pkgname=python3-manimpango
+version=0.5.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools pkg-config python3-wheel python3-Cython"
+makedepends="pango-devel python3-devel"
+depends="python3"
+short_desc="Binding for Pango, to use with Manim"
+maintainer="Eloi Torrents <eloitor@disroot.org>"
+license="MIT"
+homepage="https://manimpango.manim.community/"
+changelog="https://manimpango.manim.community/en/latest/news.html"
+distfiles="${PYPI_SITE}/m/manimpango/ManimPango-${version}.tar.gz"
+checksum=299913bbccb0f15954b64401cf9df24607e1a01edda589ea77de1ed4cc2bc284
+
+post_install() {
+	vlicense LICENSE
+}

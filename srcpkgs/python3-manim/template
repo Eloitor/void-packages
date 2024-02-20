@@ -1,0 +1,19 @@
+# Template file for 'python3-manim'
+pkgname=python3-manim
+version=0.18.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-poetry-core"
+depends="python3 python3-cloup python3-tqdm python3-watchdog python3-svgelements python3-mapbox-earcut python3-moderngl python3-srt python3-pydub python3-manimpango python3-skia-pathops python3-isosurfaces"
+short_desc="Community-maintained Python framework for creating mathematical animations"
+maintainer="Eloi Torrents <eloitor@duck.com>"
+license="MIT"
+homepage="https://www.manim.community/"
+#changelog=""
+distfiles="${PYPI_SITE}/m/manim/manim-${version}.tar.gz"
+checksum=56788066bc1aec2471a988c91e337194fd38d1035ed1b4d10838bfe64bd26af8
+
+post_install() {
+	vlicense LICENSE
+	vlicense LICENSE.community
+}

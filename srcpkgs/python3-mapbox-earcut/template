@@ -1,0 +1,15 @@
+# Template file for 'python3-mapbox-earcut'
+pkgname=python3-mapbox-earcut
+version=1.0.1
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-wheel"
+makedepends="python3-pybind11"
+depends="python3"
+short_desc="Bindings for the mapbox earcut C++ polygon triangulation library"
+maintainer="Eloi Torrents <eloitor@disroot.org>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/skogler/mapbox_earcut_python"
+changelog="https://raw.githubusercontent.com/skogler/mapbox_earcut_python/main/CHANGELOG.md"
+distfiles="${PYPI_SITE}/m/mapbox_earcut/mapbox_earcut-${version}.tar.gz"
+checksum=9f155e429a22e27387cfd7a6372c3a3865aafa609ad725e2c4465257f154a438

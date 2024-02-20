@@ -1,0 +1,19 @@
+# Template file for 'python3-cloup'
+pkgname=python3-cloup
+version=3.0.4
+revision=1
+build_style=python3-pep517
+#configure_args=""
+#make_build_args=""
+#make_install_args=""
+#conf_files=""
+#make_dirs="/var/log/dir 0755 root root"
+hostmakedepends="python3-setuptools_scm python3-wheel"
+makedepends=""
+depends=""
+short_desc="Library to add features to Click"
+maintainer="Eloi Torrents <eloitor@disroot.org>"
+license="BSD-3.0-Clause"
+homepage="https://github.com/janLuke/cloup"
+distfiles="${PYPI_SITE}/c/cloup/cloup-${version}.tar.gz"
+checksum=658111e2f49b8256a822dac5fa0205bf64109fdefc435f39923490a32b13ec09

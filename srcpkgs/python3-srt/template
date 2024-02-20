@@ -1,0 +1,25 @@
+# Template file for 'python3-srt'
+pkgname=python3-srt
+version=3.5.3
+revision=1
+#archs="i686 x86_64"
+#build_wrksrc=
+build_style=python3-module
+#configure_args=""
+#make_build_args=""
+#make_install_args=""
+#conf_files=""
+#make_dirs="/var/log/dir 0755 root root"
+hostmakedepends="python3-setuptools"
+makedepends=""
+depends=""
+short_desc="Tiny library for parsing, modifying, and composing SRT files"
+maintainer="Eloi Torrents <eloitor@disroot.org>"
+license="MIT"
+homepage="https://github.com/cdown/srt"
+distfiles="${PYPI_SITE}/s/srt/srt-${version}.tar.gz"
+checksum=4884315043a4f0740fd1f878ed6caa376ac06d70e135f306a6dc44632eed0cc0
+
+post_install() {
+	vlicense LICENSE
+}

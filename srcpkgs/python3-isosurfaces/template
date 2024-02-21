@@ -1,0 +1,17 @@
+# Template file for 'python3-isosurfaces'
+pkgname=python3-isosurfaces
+version=0.1.1
+revision=1
+build_style=python3-module
+hostmakedepends="python3-setuptools"
+depends="python3"
+short_desc="Construct isolines/isosurfaces defined by a function"
+maintainer="Eloi Torrents <eloitor@disroot.org>"
+license="MIT"
+homepage="https://github.com/jared-hughes/isosurfaces"
+distfiles="https://github.com/jared-hughes/isosurfaces/archive/refs/tags/v${version}.tar.gz"
+checksum=6b8dfdc4e12bd87dce72e292e95512e59f9a7675c58049cd436a9d39d572651a
+
+post_install() {
+	vlicense LICENSE
+}

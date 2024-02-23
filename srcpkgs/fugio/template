@@ -1,0 +1,21 @@
+# Template file for 'fugio'
+pkgname=fugio
+version=3.0.0
+revision=1
+#archs="i686 x86_64"
+#build_wrksrc=
+build_style=cmake
+#configure_args=""
+#make_build_args=""
+#make_install_args=""
+#conf_files=""
+#make_dirs="/var/log/dir 0755 root root"
+hostmakedepends="qt5-qmake qt5-host-tools"
+makedepends="qt5-devel qt5-tools-devel qt5-websockets-devel qt5-serialport-devel lua-devel snappy-devel ffmpeg-devel fftw-devel libopencv-devel portaudio-devel portmidi-devel"
+depends=""
+short_desc="Visual programming system for digital art and creative exploration"
+maintainer="Eloi Torrents <eloitor@disroot.org>"
+license="LGPL-3.0"
+homepage="https://github.com/bigfug/Fugio"
+distfiles="https://github.com/bigfug/Fugio/archive/refs/tags/v${version}.tar.gz"
+checksum=3df4d6ab31a1bd080560dec2abacd5f46ac54bbe3d0923a7a5eb67f00c4352c0

@@ -1,0 +1,14 @@
+# Template file for 'thought'
+pkgname=thought
+version=1.0.2
+revision=1
+build_style=gnu-makefile
+hostmakedepends=""
+makedepends=""
+depends=""
+short_desc="Mad Libs®-style phrase generator."
+maintainer="Eloi Torrents <eloitor@disroot.org>"
+license="GPL-3.0-or-later"
+homepage="https://dianne.skoll.ca/projects/thought/"
+distfiles="https://dianne.skoll.ca/projects/thought/download/thought-${version}.tar.gz"
+checksum=ce500682d52cea8d58806f93008c61a3754cbfb04eec592bd9e9b677030d1343

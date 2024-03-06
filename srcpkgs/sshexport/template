@@ -1,0 +1,26 @@
+# Template file for 'sshexport'
+pkgname=sshexport
+version=2.6
+revision=1
+hostmakedepends="ruby-asciidoctor"
+depends="python3 openssh"
+short_desc="Install your ssh keys on remote sites"
+maintainer="Eloi Torrents <eloitor@disroot.org>"
+license="BSD-3-Clause"
+homepage="https://http://www.catb.org/~esr/sshexport"
+changelog="http://www.catb.org/~esr/sshexport/NEWS.html"
+distfiles="http://www.catb.org/~esr/sshexport/sshexport-${version}.tar.gz"
+checksum=9e74997770f7fd962dbbd5f7b2d9cbba7b9cbff4b2b5be43489ae916e0976f1f
+
+do_build() {
+	asciidoctor -D. -a nofooter -b manpage sshexport.adoc
+}
+
+do_install() {
+	vbin sshexport
+	vman sshexport.1
+}
+
+post_install() {
+	vlicense COPYING
+}

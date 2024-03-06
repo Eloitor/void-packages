@@ -1,0 +1,13 @@
+# Template file for 'day-executor'
+pkgname=day-executor
+version=0.1
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-wheel"
+depends="python3"
+short_desc="Ultra-minimal productivity system"
+maintainer="Eloi Torrents <eloitor@disroot.org>"
+license="BSD-2-Clause"
+homepage="https://github.com/ardunn/dex"
+distfiles="https://github.com/ardunn/dex/archive/refs/tags/${version}.tar.gz"
+checksum=21ca480c7cf0223522511af2d2cc60ce0229147397ec158ab6cb12c32c4dacae

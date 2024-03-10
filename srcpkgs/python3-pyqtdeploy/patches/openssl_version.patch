@@ -1,0 +1,23 @@
+--- a/pyqtdeploy/sysroot/plugins/OpenSSL.py
++++ b/pyqtdeploy/sysroot/plugins/OpenSSL.py
+@@ -262,13 +262,14 @@ class OpenSSLComponent(Component):
+             version = version[:-1]
+ 
+         try:
+-            version = int(version, base=16)
++            major = int(self.get_version_from_file('OPENSSL_VERSION_MAJOR',
++                    '/usr/include/openssl/opensslv.h'))
++            minor = int(self.get_version_from_file('OPENSSL_VERSION_MINOR',
++                    '/usr/include/openssl/opensslv.h'))
++            minor = int(self.get_version_from_file('OPENSSL_VERSION_PATCH',
++                    '/usr/include/openssl/opensslv.h'))
+         except ValueError:
+             self.error("unable to extract the version number")
+-
+-        major = (version >> 28) & 0xff
+-        minor = (version >> 20) & 0xff
+-        patch = (version >> 12) & 0xff
+-        suffix = chr(((version >> 4) & 0x0f) + ord('a') - 1)
++        suffix = chr(0x0f + ord('a') - 1)
+ 
+         return self.parse_version_number((major, minor, patch, suffix))

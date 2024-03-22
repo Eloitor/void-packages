@@ -1,0 +1,22 @@
+# Template file for 'tclx'
+pkgname=tclx
+version=8.6.3
+revision=1
+#archs="i686 x86_64"
+#build_wrksrc=
+build_style=gnu-configure
+#configure_args=""
+#make_build_args=""
+#make_install_args=""
+#conf_files=""
+#make_dirs="/var/log/dir 0755 root root"
+hostmakedepends=""
+makedepends="tcl-devel"
+depends=""
+short_desc="TclX extension for Tcl"
+maintainer="Eloi Torrents <eloitor@disroot.org>"
+license="BSD"
+homepage="https://github.com/flightaware/tclx"
+changelog="https://github.com/flightaware/tclx/releases"
+distfiles="https://github.com/flightaware/tclx/archive/v${version}.tar.gz"
+checksum=4707d895fb213f9db02944fdd676acea3e8cb946f1c04b0cead5ea71a4893b10

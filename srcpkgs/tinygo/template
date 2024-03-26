@@ -1,0 +1,18 @@
+# Template file for 'tinygo'
+pkgname=tinygo
+version=0.31.2
+revision=1
+build_style=go
+go_import_path=github.com/tinygo-org/tinygo
+makedepends="clang llvm17-devel"
+short_desc="Go compiler for small places"
+maintainer="Eloi Torrents <eloitor@disroot.org>"
+license="BSD-3-Clause, Apache-2.0"
+homepage="https://tinygo.org/"
+changelog="https://raw.githubusercontent.com/tinygo-org/tinygo/release/CHANGELOG.md"
+distfiles="https://github.com/tinygo-org/tinygo/archive/v${version}.tar.gz"
+checksum=b318b1a12e3c0b85583402b54832a5d9004dc646b6633da04acb8ce4939741fd
+
+post_install() {
+	vlicense LICENSE
+}

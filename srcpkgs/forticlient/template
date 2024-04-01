@@ -1,6 +1,6 @@
 # Template file for 'forticlient'
 pkgname=forticlient
-version=7.2.1.0700
+version=7.2.2.0753
 revision=1
 archs="x86_64"
 depends="libffi"
@@ -9,7 +9,7 @@ maintainer="Eloi Torrents <eloitor@disroot.org>"
 license="custom:Proprietary"
 homepage="https://www.fortinet.com"
 distfiles="https://repo.fortinet.com/repo/forticlient/7.2/debian/pool/non-free/f/forticlient/forticlient_${version}_amd64.deb"
-checksum=e2197329afc7305e558da2c69dccaaf0b526e787095578d917ed78cea0a18260
+checksum=d3657ee92e4fa617363e167cdcad9a071aeec7c5306af86ee9386a3a923c0382
 alternatives="forticlient:/usr/bin/FortiClient:/opt/forticlient/gui/FortiClient-linux-x64/FortiClient"
 make_dirs="/etc/forticlient 0755 root root
  /var/log/forticlient/ 0755 root root"
@@ -73,7 +73,7 @@ do_install() {
 
 	cd gui/FortiClient-linux-x64
 	vmkdir /opt/forticlient/gui/FortiClient-linux-x64
-	vinstall FortiClient 744 /opt/forticlient/gui/FortiClient-linux-x64
+	vinstall FortiClient 755 /opt/forticlient/gui/FortiClient-linux-x64
 	vinstall chrome-sandbox 744 /opt/forticlient/gui/FortiClient-linux-x64
 	vinstall chrome_100_percent.pak 644 /opt/forticlient/gui/FortiClient-linux-x64
 	vinstall chrome_200_percent.pak 644 /opt/forticlient/gui/FortiClient-linux-x64
@@ -82,7 +82,6 @@ do_install() {
 	vinstall libGLESv2.so 644 /opt/forticlient/gui/FortiClient-linux-x64
 	vinstall libffmpeg.so 644 /opt/forticlient/gui/FortiClient-linux-x64
 	vinstall libvk_swiftshader.so 644 /opt/forticlient/gui/FortiClient-linux-x64
-	vinstall libvulkan.so 644 /opt/forticlient/gui/FortiClient-linux-x64
 	vinstall resources.pak 644 /opt/forticlient/gui/FortiClient-linux-x64
 	vinstall snapshot_blob.bin 644 /opt/forticlient/gui/FortiClient-linux-x64
 	vinstall v8_context_snapshot.bin 644 /opt/forticlient/gui/FortiClient-linux-x64
@@ -93,9 +92,6 @@ do_install() {
 	vcopy "locales/*.pak" opt/forticlient/gui/FortiClient-linux-x64/locales
 
 	vinstall resources/app.asar 644 /opt/forticlient/gui/FortiClient-linux-x64/resources
-
-	vinstall swiftshader/libEGL.so 644 /opt/forticlient/gui/FortiClient-linux-x64/swiftshader
-	vinstall swiftshader/libGLESv2.so 644 /opt/forticlient/gui/FortiClient-linux-x64/swiftshader
 }
 
 post_install() {

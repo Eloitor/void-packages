@@ -1,0 +1,16 @@
+# Template file for 'python3-debugpy'
+pkgname=python3-debugpy
+version=1.8.2
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-wheel"
+short_desc="Implementation of the Debug Adapter Protocol for Python"
+maintainer="Eloi Torrents <eloitor@duck.com>"
+license="MIT"
+homepage="https://github.com/microsoft/debugpy/"
+distfiles="https://github.com/microsoft/debugpy/archive/refs/tags/v${version}.tar.gz"
+checksum=c68cb35f01b943f929ba526af797ba96cff8925bc48dc89b3e2a45b9a782d282
+
+post_install() {
+	vlicense LICENSE
+}

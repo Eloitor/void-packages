@@ -1,8 +1,8 @@
 # Template file for 'rpi-utils'
 pkgname=rpi-utils
-version=20240523
+version=20250812
 revision=1
-_commit=b9c63214c535d7df2b0fa6743b7b3e508363c25a
+_commit=e923ccad57d2a22f606c8fe0d1096e782a090fc9
 archs="aarch64* armv7l* armv6l*"
 build_style=cmake
 makedepends="dtc-devel"
@@ -12,7 +12,7 @@ maintainer="classabbyamp <void@placeviolette.net>"
 license="BSD-3-Clause"
 homepage="https://github.com/raspberrypi/utils"
 distfiles="https://github.com/raspberrypi/utils/archive/${_commit}.tar.gz"
-checksum=e2dd917ba498c3cc24fbcea6a3e14fd06ed99d0b00a230b1ec8a3d36ad2b0ac9
+checksum=bd819beda4b831421b2468b2367ca2fc288024d39c3396b2bdd4aa9c304c9d64
 python_version=3
 
 post_install() {
@@ -20,7 +20,7 @@ post_install() {
 }
 
 rpi-userland_package() {
-	build_style=meta
+	metapackage=yes
 	short_desc="RPi userland utilities (transitional dummy package)"
 	depends="${sourcepkg}>=${version}_${revision}"
 }

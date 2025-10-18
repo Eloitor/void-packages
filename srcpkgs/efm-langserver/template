@@ -1,6 +1,6 @@
 # Template file for 'efm-langserver'
 pkgname=efm-langserver
-version=0.0.52
+version=0.0.54
 revision=1
 build_style=go
 go_import_path=github.com/mattn/efm-langserver
@@ -9,7 +9,7 @@ maintainer="icp <pangolin@vivaldi.net>"
 license="MIT"
 homepage="https://github.com/mattn/efm-langserver"
 distfiles="https://github.com/mattn/efm-langserver/archive/refs/tags/v${version}.tar.gz"
-checksum=8a61b2da781835da2d54786bd985f548beaf4b9ce9d003f806f198cb0ab51078
+checksum=4149b2922899ce313a89f60851f6678369253ed542dd65bdc8dd22f3cf1629bb
 
 post_install() {
 	vlicense LICENSE

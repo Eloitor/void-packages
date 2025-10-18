@@ -1,6 +1,6 @@
 # Template file for 'elisa'
 pkgname=elisa
-version=24.05.1
+version=25.08.0
 revision=1
 build_style=cmake
 configure_args="-DBUILD_TESTING=OFF -DKF6_HOST_TOOLING=/usr/lib/cmake
@@ -19,4 +19,4 @@ maintainer="John <me@johnnynator.dev>"
 license="GPL-3.0-or-later"
 homepage="https://kde.org/applications/en/multimedia/org.kde.elisa"
 distfiles="${KDE_SITE}/release-service/${version}/src/elisa-${version}.tar.xz"
-checksum=55ed76a676af42c3af455f64a7f63f51a3fbaa619c92d345be6708ad5cdc77e2
+checksum=76029c54e927873039c3c282ada787a78f1d0d6dbc8fa9bd2e819aeec5df2d5c

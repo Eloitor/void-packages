@@ -1,6 +1,6 @@
 # Template file for 'kaddressbook'
 pkgname=kaddressbook
-version=24.05.1
+version=25.08.0
 revision=1
 build_style=cmake
 configure_args="-DBUILD_TESTING=OFF -DKF6_HOST_TOOLING=/usr/lib/cmake
@@ -16,7 +16,7 @@ maintainer="Orphaned <orphan@voidlinux.org>"
 license="GPL-2.0-or-later"
 homepage="https://kde.org/applications/en/office/org.kde.kaddressbook"
 distfiles="${KDE_SITE}/release-service/${version}/src/${pkgname}-${version}.tar.xz"
-checksum=e4ddf148819d85305003130a7fb0c47d607ff20b4f12d84b3d90d3443478bcd8
+checksum=bd05ffbec679b701b2bdc5da2b97c83bd81437a3398771fc4b03efbb7ac1a647
 
 kaddressbook-devel_package() {
 	depends="${sourcepkg}>=${version}_${revision}"

@@ -1,25 +1,26 @@
 # Template file for 'github-cli'
 pkgname=github-cli
-version=2.53.0
+version=2.82.0
 revision=1
 build_style=go
 build_helper=qemu
 go_import_path="github.com/cli/cli/v2"
 go_package="${go_import_path}/cmd/gh"
 go_ldflags="-X github.com/cli/cli/v2/internal/build.Version=v${version}"
+checkdepends="git openssh"
 short_desc="GitHub CLI tool"
 maintainer="tranzystorekk <tranzystorek.io@protonmail.com>"
 license="MIT"
 homepage="https://cli.github.com"
 changelog="https://github.com/cli/cli/releases"
 distfiles="https://github.com/cli/cli/archive/refs/tags/v${version}.tar.gz"
-checksum=5e47d567216b1f63a4939e634f9067c9b60b0852625edf8ad10e1b9be5033cff
+checksum=c282c0bf2a2c694c99dd7d6da1ac13b3e87c1a511186ec66f0144d8b0ac94a49
 
 pre_build() {
 	local _date
 	if [ "$SOURCE_DATE_EPOCH" ]; then
 		_date="$(date --utc --date "@$SOURCE_DATE_EPOCH" "+%Y-%m-%d")"
-		go_ldflags="$go_ldflags -X github.com/cli/cli/v2/internal/build.Date=${_date}"
+		go_ldflags+=" -X github.com/cli/cli/v2/internal/build.Date=${_date}"
 	fi
 }
 

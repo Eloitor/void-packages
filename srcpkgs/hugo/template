@@ -1,6 +1,6 @@
 # Template file for 'hugo'
 pkgname=hugo
-version=0.129.0
+version=0.151.1
 revision=1
 build_style=go
 build_helper=qemu
@@ -11,7 +11,7 @@ maintainer="Andrea Brancaleoni <abc@pompel.me>"
 license="Apache-2.0"
 homepage="https://gohugo.io"
 distfiles="https://github.com/gohugoio/hugo/archive/v${version}.tar.gz"
-checksum=e78d43b8c1570061ed965d72cd7dc4cd7c7cfc176e7b591e281586ffd2749685
+checksum=7750d644c5ea762ba400001d753a9d37dc4f1467ca470f01cffff2b2a87c9232
 
 post_install() {
 	vdoc README.md

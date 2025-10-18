@@ -1,6 +1,6 @@
 # Template file for 'konquest'
 pkgname=konquest
-version=24.05.1
+version=25.08.0
 revision=1
 build_style=cmake
 configure_args="-DBUILD_TESTING=OFF -DKF6_HOST_TOOLING=/usr/lib/cmake
@@ -13,9 +13,9 @@ makedepends="libkdegames-devel qt6-scxml-devel
  kf6-kcrash-devel kf6-kdbusaddons-devel kf6-kdoctools-devel"
 depends="hicolor-icon-theme"
 short_desc="KDE galactic conquest game"
-maintainer="Olga Ustuzhanina <me@laserbat.pw>"
+maintainer="Orphaned <orphan@voidlinux.org>"
 license="GPL-2.0-or-later"
 homepage="https://kde.org/applications/en/games/org.kde.konquest"
 changelog="https://kde.org/announcements/changelogs/gear/${version}/#konquest"
 distfiles="${KDE_SITE}/release-service/${version}/src/konquest-${version}.tar.xz"
-checksum=34fe08e2be91f62ee11fe8208c0837ea4ea5443452a5be0a93b6d7680fd5a020
+checksum=ac4b57d7e0ffa2b03c2a6794b4f4af7acfd284cbf3a8b38559cf8f48c8687184

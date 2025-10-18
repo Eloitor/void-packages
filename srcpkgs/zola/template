@@ -1,6 +1,6 @@
 # Template file for 'zola'
 pkgname=zola
-version=0.19.1
+version=0.21.0
 revision=1
 build_style=cargo
 build_helper=qemu
@@ -12,7 +12,7 @@ license="MIT"
 homepage="https://github.com/getzola/zola"
 changelog="https://raw.githubusercontent.com/getzola/zola/master/CHANGELOG.md"
 distfiles="https://github.com/getzola/zola/archive/refs/tags/v${version}.tar.gz"
-checksum=9926c3e7c64ee20a48dc292785c5a29f387c1fab639005ced894982f9c3d7258
+checksum=bbfbc0496cf6612b6030c6d97b0fd2567f5ec41e251f8874b6c9ccda4c8149d4
 
 post_install() {
 	for shell in bash fish zsh; do

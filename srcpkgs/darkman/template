@@ -1,7 +1,7 @@
 # Template file for 'darkman'
 pkgname=darkman
 version=2.0.1
-revision=1
+revision=2
 build_style=go
 build_helper=qemu
 go_import_path="gitlab.com/WhyNotHugo/darkman"
@@ -10,7 +10,7 @@ go_ldflags="-X main.Version=${version}"
 hostmakedepends="scdoc"
 depends="dbus"
 short_desc="Daemon for dark-mode and light-mode transitions on Linux desktop"
-maintainer="André Cerqueira <acerqueira021@gmail.com>"
+maintainer="Orphaned <orphan@voidlinux.org>"
 license="ISC"
 homepage="https://darkman.whynothugo.nl/"
 changelog="https://gitlab.com/WhyNotHugo/darkman/-/raw/main/CHANGELOG.md"

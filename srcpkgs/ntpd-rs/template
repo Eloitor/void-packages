@@ -1,6 +1,6 @@
 # Template file for 'ntpd-rs'
 pkgname=ntpd-rs
-version=1.2.3
+version=1.6.2
 revision=1
 build_style=cargo
 make_check_args="--
@@ -9,14 +9,13 @@ make_check_args="--
  --skip daemon::keyexchange::tests::key_exchange_weird_packet
 "
 make_install_args="--path ntpd"
-depends="libcap-progs"
 short_desc="Full-featured implementation of the Network Time Protocol"
 maintainer="tranzystorekk <tranzystorek.io@protonmail.com>"
-license="Apache-2.0, MIT"
+license="Apache-2.0 OR MIT"
 homepage="https://github.com/pendulum-project/ntpd-rs"
 changelog="https://raw.githubusercontent.com/pendulum-project/ntpd-rs/main/CHANGELOG.md"
 distfiles="https://github.com/pendulum-project/ntpd-rs/archive/refs/tags/v${version}.tar.gz"
-checksum=de5c06b3ecde04dd7c19b8ff83450e3c86906059cd0179f2010c0833d4695aef
+checksum=cf88a2f65dcbff37d7f713713aff10eb7fe9c9d6d4d7ab694f972990b121821b
 
 system_accounts="_ntpd_rs"
 conf_files="/etc/ntpd-rs/ntp.toml"
@@ -29,6 +28,7 @@ post_install() {
 	vinstall ntp.toml 644 etc/ntpd-rs
 	vlicense LICENSE-MIT
 	vsv ntpd-rs
+	vsv ntpd-rs-metrics
 
 	for manpage in docs/precompiled/man/*; do
 		vman ${manpage}

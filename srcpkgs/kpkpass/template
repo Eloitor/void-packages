@@ -1,6 +1,6 @@
 # Template file for 'kpkpass'
 pkgname=kpkpass
-version=24.05.1
+version=25.08.0
 revision=1
 build_style=cmake
 configure_args="-DBUILD_TESTING=OFF -DKF6_HOST_TOOLING=/usr/lib/cmake
@@ -15,7 +15,7 @@ license="LGPL-2.1-or-later"
 homepage="https://kontact.kde.org"
 changelog="https://kde.org/announcements/changelogs/gear/${version}/#kpkpass"
 distfiles="${KDE_SITE}/release-service/${version}/src/${pkgname}-${version}.tar.xz"
-checksum=ef1946a40566e83e3734e06f0b505a5a046b377edb1376cc5796dbbc2e85efc8
+checksum=2ee2a25ff90f23026dd687e2b62ac1a908c1c55fdf685a42583d67472a1badbb
 
 kpkpass-devel_package() {
 	depends="${sourcepkg}>=${version}_${revision}"

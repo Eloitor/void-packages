@@ -1,6 +1,6 @@
 # Template file for 'kio-gdrive'
 pkgname=kio-gdrive
-version=24.05.1
+version=24.12.3
 revision=1
 build_style=cmake
 configure_args="-DBUILD_TESTING=OFF -DKF6_HOST_TOOLING=/usr/lib/cmake
@@ -18,4 +18,4 @@ license="GPL-2.0-or-later"
 homepage="https://community.kde.org/KIO_GDrive"
 changelog="https://kde.org/announcements/changelogs/gear/${version}/#kio-gdrive"
 distfiles="${KDE_SITE}/release-service/${version}/src/kio-gdrive-${version}.tar.xz"
-checksum=aacab6e19e84a8a60c7bd1d917fe9687b891e35f130373db31b58203ec6f8b25
+checksum=748116c746bf4eaa2114ac8fe1dc4c85b285ff0af8e2968206a4d97fbceb5126
